@@ -1,0 +1,19 @@
+<div >
+  <div class="row ">
+    <div class="col-md-6 col-sm-6 col-6 padding-five-buttons">
+      <div  (click)="orderByDate()" class="btn btn-info c-buttons">sort by date</div>
+      <div (click)="orderByRate()" class="btn btn-info c-buttons">sort by rate</div>
+      <div (click)="moveUpLanguage()" class="btn btn-info c-buttons">animation</div>
+    </div>
+  </div>
+  <div class="row table-br">
+  <div class="col-md-2 col-sm-2 col-2 padding-five">date</div>
+  <div class="col-md-2 col-sm-2 col-2 padding-five">rate</div>
+  <div class="col-md-2 col-sm-2 col-2"></div>
+  </div>
+  <div class="row table-br  " *ngFor="let item of data; let idx = index">
+  <div class="col-md-2 col-sm-2 col-2 padding-five ">{{item.Date | date:'fullDate'}}</div>
+  <div class="col-md-2 col-sm-2 col-2 padding-five">{{item.Rate}}</div>
+  <div class="col-md-2 col-sm-2 col-2 padding-five"><div (click)="delete(idx)" class="btn btn-danger delet-btn"><i class="fa fa-trash" aria-hidden="true"></i></div></div>
+  </div>
+</div>
